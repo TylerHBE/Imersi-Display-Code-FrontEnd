@@ -139,7 +139,7 @@ export default function CreateNewBlitzBoutGame({ token, email, setGameSettings }
         // set configurations
         const configuration = {
             method: "post",
-            url: "http://localhost:8080/games/BlitzBout/create-gameSetting",
+            url: process.env.REACT_APP_API_CREATE_GAMESETTING,
             data: {
                 token: token,
                 email: email,

@@ -29,7 +29,7 @@ export default function SignUp({ setToken, setAvatar, setFavColor, setUsername, 
         // set configurations
         const configuration = {
             method: "post",
-            url: "http://localhost:8080/account/sign-up",
+            url: process.env.REACT_APP_API_SIGN_UP,
             data: {
                 email: userEmail,
                 username: nUsername,

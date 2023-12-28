@@ -22,7 +22,7 @@ export default function JoinBlitzBoutGame({ token, avatar, username, email, setG
     // set configurations
     const configuration = {
       method: "post",
-      url: "http://localhost:8080/games/BlitzBout/join-game",
+      url: process.env.REACT_APP_API_JOIN_GAME,
       data: {
         email: email,
         token: token,

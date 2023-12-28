@@ -34,7 +34,7 @@ export default function CreateBlitzBoutGame({ token, avatar, username, email, ga
             // set configurations
             const configuration = {
                 method: "post",
-                url: "http://localhost:8080/games/BlitzBout/get-gameSettings",
+                url: process.env.REACT_APP_API_GET_GAMESETTINGS,
                 data: {
                     email: email,
                 },
@@ -70,7 +70,7 @@ export default function CreateBlitzBoutGame({ token, avatar, username, email, ga
         // set configurations
         const configuration = {
             method: "post",
-            url: "http://localhost:8080/games/BlitzBout/create-game",
+            url: process.env.REACT_APP_API_CREATE_GAME,
             data: {
                 token: token,
                 username: username,
@@ -111,7 +111,7 @@ export default function CreateBlitzBoutGame({ token, avatar, username, email, ga
         // set configurations
         const configuration = {
             method: "post",
-            url: "http://localhost:8080/games/BlitzBout/delete-gameSetting",
+            url: process.env.REACT_APP_API_DELETE_GAME,
             data: {
                 token: token,
                 username: username,

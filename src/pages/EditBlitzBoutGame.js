@@ -146,7 +146,7 @@ export default function EditBlitzBoutGame({ token, email, setGameSettings, gameS
         // set configurations
         const configuration = {
             method: "post",
-            url: "http://localhost:8080/games/BlitzBout/update-gameSetting",
+            url: process.env.REACT_APP_API_UPDATE_GAMESETTING,
             data: {
                 token: token,
                 email: email,

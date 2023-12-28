@@ -27,7 +27,7 @@ export default function LogIn({ setToken, setAvatar, setUsername, setEmail, setF
     // set configurations
     const configuration = {
       method: "post",
-      url: "http://localhost:8080/account/log-in",
+      url: process.env.REACT_APP_API_LOG_IN,
       data: {
         email: userEmail,
         password,

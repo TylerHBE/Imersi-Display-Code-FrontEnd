@@ -24,7 +24,7 @@ const Settings = ({ avatar, username, email, token, setAvatar, setFavColor, favC
         // set configurations
         const configuration = {
             method: "post",
-            url: "http://localhost:8080/account/update-avatar",
+            url: process.env.REACT_APP_API_UPDATE_AVATAR,
             data: {
                 email: email,
                 avatar: userAvatar,
@@ -62,7 +62,7 @@ const Settings = ({ avatar, username, email, token, setAvatar, setFavColor, favC
         // set configurations
         const configuration = {
             method: "post",
-            url: "http://localhost:8080/account/update-favColor",
+            url: process.env.REACT_APP_API_UPDATE_FAVCOLOR,
             data: {
                 email: email,
                 favColor: userFavColor,
