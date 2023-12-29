@@ -6,6 +6,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import joinGame from '../functions/joinGame';
 import socket from '../functions/socket';
+import useViewport from '../hooks/useViewport';
 
 export default function JoinBlitzBoutGame({ token, avatar, username, email, setGameKey }) {
 
@@ -13,6 +14,11 @@ export default function JoinBlitzBoutGame({ token, avatar, username, email, setG
   const [join, setJoin] = useState(false);
   const [errMsg, setErrMsg] = useState("");
   const navigate = useNavigate();
+  const width = useViewport().width;
+  const baseline1 = 300;
+  const baseline2 = 500;
+  const baseline3 = 700;
+  const baseline4 = 900;
 
   const handleSubmit = (e) => {
     // prevent the form from refreshing the whole page
@@ -38,7 +44,7 @@ export default function JoinBlitzBoutGame({ token, avatar, username, email, setG
       .then((result) => {
 
         navigate("/games/BlitzBout/play");
-        setGameKey(result.data.gameKey );
+        setGameKey(result.data.gameKey);
         setJoin(true)
         joinGame(socket, email, token, result.data.gameKey)
 
@@ -61,6 +67,9 @@ export default function JoinBlitzBoutGame({ token, avatar, username, email, setG
     flexDirection: "column",
     alignItems: "center",
     backgroundColor: "#e3e3ed",
+    paddingTop: width < baseline3 ? "15%" : "6%",
+    paddingBottom: width < baseline1 ? "80%" : (width < baseline2 ? "50%" : (width < baseline3 ? "28%" : (width < baseline4 ? "15%" : "6%"))),
+
 
   }
 

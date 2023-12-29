@@ -158,7 +158,7 @@ export default function CreateBlitzBoutGame({ token, avatar, username, email, ga
 
         display: "flex",
         paddingTop: width < baseline3 ? "15%" : "6%",
-        paddingBottom: width < baseline3 ? "15%" : "6%",
+        paddingBottom: width < baseline1 ? "80%" : ( width < baseline2 ? "50%" : ( width < baseline3 ? "28%" : ( width < baseline4 ? "15%" : "6%" ) ) ),
         flexDirection: "column",
         alignItems: "center",
         backgroundColor: "#e3e3ed",
